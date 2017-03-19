@@ -1,0 +1,38 @@
+doctype html
+html lang="en"
+  head
+    title =defined?(title) ? "MyApp - #{title}" : "MyApp"
+    /! Required meta tags always come first
+    meta charset="utf-8"
+    meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"
+    meta content="ie=edge" http-equiv="x-ua-compatible"
+    /! Bootstrap CSS
+    link crossorigin="anonymous" \
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" \
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" \
+      rel="stylesheet"
+    link crossorigin="anonymous" \
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    /! Custom CSS styles
+    link href="/application.css" rel="stylesheet"
+
+  body
+    == slim :'partials/navbar'
+    .container
+      .mt-1
+        == yield
+
+    == slim :'partials/footer'
+
+    /! jQuery first, then Tether, then Bootstrap JS.
+    script crossorigin="anonymous" \
+      integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" \
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    script crossorigin="anonymous" \
+      integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" \
+      src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    script crossorigin="anonymous" \
+      integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" \
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    /! Custom js
+    script src="/application.js"
